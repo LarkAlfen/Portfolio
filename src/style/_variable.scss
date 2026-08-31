@@ -13,13 +13,13 @@ $color-primary-light: #818cf8;
 
 $color-secondary: #8b5cf6;
 
-$color-background: #ffffff;
 $color-background-secondary: #f8fafc;
-$color-background-dark: #0f172a;
+$color-background: #0a1128;
 
-$color-text: #0f172a;
-$color-text-secondary: #475569;
-$color-text-muted: #94a3b8;
+$text-primary: #f1f5f9;
+$text-secondary: #b8c1d1;
+$text-muted: #7f8ba3;
+$text-disabled: #566176;
 
 $color-border: #e2e8f0;
 
@@ -177,4 +177,3 @@ $z-index-header: 1200;
 $z-index-modal: 1300;
 $z-index-toast: 1400;
 $z-index-tooltip: 1500;
-```
