@@ -1,15 +1,15 @@
-import "./Header.scss";
+import "./Header.scss"
 
 export function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <a href="#accueil" className="header__logo">
+        <a href="#" className="header__logo">
           Allan
         </a>
 
         <nav className="header__nav" aria-label="Navigation principale">
-          <a href="#accueil" className="header__link">
+          <a href="#" className="header__link">
             Accueil
           </a>
 

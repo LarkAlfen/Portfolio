@@ -1,0 +1,82 @@
+@use "../../style/mixin" as *;
+@use "../../style/variables" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  backdrop-filter: blur(12px);
+
+  &__container {
+    @include container(1200px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  &__logo {
+    color: $color-primary;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    position: relative;
+
+    color: $text-muted;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary;
+    }
+
+    &--active::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+
+      height: 2px;
+      border-radius: 999px;
+
+    }
+  }
+
+  @include mobile {
+    &__container {
+      height: 64px;
+    }
+
+    &__nav {
+      gap: 16px;
+    }
+
+    &__link {
+      font-size: 0.85rem;
+    }
+  }
+}

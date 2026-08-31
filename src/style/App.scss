@@ -1,8 +1,11 @@
-@use "./variable" as *;
+@use "./variables" as *;
 @use "./mixin";
 @use "./reset";
 @use "./typography";
 
+html,
 body{
-    background-color: $color-background;
+    background: $color-background;
+    background: $color-background-gradient;
+    scroll-behavior: smooth;
 }
