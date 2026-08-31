@@ -1,0 +1,8 @@
+@use "./variable" as *;
+@use "./mixin";
+@use "./reset";
+@use "./typography";
+
+body{
+    background-color: $color-primary;
+}
