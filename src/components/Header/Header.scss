@@ -20,10 +20,28 @@
   }
 
   &__logo {
-    color: $color-primary;
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: none;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #694f68;
+    border: 2px solid #694f68;
+    border-radius: 10px;
+
+    color: var(--color-background);
+
+    font-family: "Satoshi", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
   }
 
   &__nav {
@@ -35,7 +53,7 @@
   &__link {
     position: relative;
 
-    color: $text-muted;
+    color: var(--text-muted);
     font-size: 0.95rem;
     font-weight: 500;
     text-decoration: none;
@@ -45,11 +63,11 @@
       transform 0.2s ease;
 
     &:hover {
-      color: $color-primary;
+      color: var(--text-primary);
     }
 
     &--active {
-      color: $color-primary;
+      color: var(--text-primary);
     }
 
     &--active::after {
@@ -62,7 +80,6 @@
 
       height: 2px;
       border-radius: 999px;
-
     }
   }
 
@@ -78,5 +95,50 @@
     &__link {
       font-size: 0.85rem;
     }
+  }
+}
+
+.theme-switch {
+  position: relative;
+
+  width: 48px;
+  height: 26px;
+
+  padding: 0;
+
+  border: 1px solid $color-border;
+  border-radius: 999px;
+
+  background-color: #e2e8f0;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+
+  &__thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+    background-color: white;
+
+    transition: transform 0.2s ease;
+  }
+
+  &--dark {
+    background-color: $color-primary;
+
+    .theme-switch__thumb {
+      transform: translateX(22px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
   }
 }

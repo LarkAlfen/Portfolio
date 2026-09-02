@@ -1,11 +1,14 @@
 import "./Header.scss"
+import { useTheme } from "../../context/ThemeContext";
 
 export function Header() {
+  const {darkMode, toggleDarkMode } = useTheme()
+
   return (
     <header className="header">
       <div className="header__container">
         <a href="#" className="header__logo">
-          Allan
+          <span>AT</span>
         </a>
 
         <nav className="header__nav" aria-label="Navigation principale">
@@ -25,6 +28,14 @@ export function Header() {
             Contact
           </a>
         </nav>
+        <button 
+        type="button" 
+        className={`theme-switch ${darkMode ? "theme-switch--dark" : ""}`} 
+        onClick={toggleDarkMode} 
+        aria-label={ darkMode ? "Activer le mode clair" : "Activer le mode sombre" } aria-pressed={darkMode} 
+        >
+          <span className="theme-switch__thumb" />
+        </button>      
       </div>
     </header>
   );

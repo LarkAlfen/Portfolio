@@ -5,7 +5,8 @@
 
 html,
 body{
-    background: $color-background;
-    background: $color-background-gradient;
+  background-color: var(--color-background);
+
+  transition: background-color 0.4s ease;
     scroll-behavior: smooth;
 }

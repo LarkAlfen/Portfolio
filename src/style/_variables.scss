@@ -2,20 +2,39 @@
    VARIABLES
    ========================================================= */
 
-
 /* ---------------------------------------------------------
    Colors
    --------------------------------------------------------- */
+:root {
+  // Background
+  --color-background: #f5f3f0;
 
-$color-primary: #e879a9;
-$color-primary-dark: #c95787;
-$color-primary-light: #f3a6c5;
+  // Text
+  --text-primary: #241f24;
+  --text-secondary: #5f565f;
+  --text-muted: #807680;
+  --text-disabled: #aaa2aa;
+}
 
-$color-secondary: #a78bfa;
+:root.dark {
+  // Background
+  --color-background: #100914;
 
-$color-background-secondary: #17101f;
-$color-background: #02010a;
-$color-background-gradient: linear-gradient(180deg,rgba(2, 1, 10, 1) 0%, rgba(33, 4, 25, 1) 100%);
+  // Text
+  --text-primary: #f5f3f0;
+  --text-secondary: #c9c0ca;
+  --text-muted: #968b98;
+  --text-disabled: #665d68;
+}
+$color-background-secondary: #100914;
+
+$color-primary: #694f68;
+$color-primary-dark: #6c5e72;
+$color-primary-light: #887b8e;
+
+$color-background-secondary: #694f68;
+$color-background: #f5f3f0;
+$color-background-dark: #100914;
 
 $text-primary: #f8f5f7;
 $text-secondary: #c9bec8;
@@ -32,7 +51,6 @@ $color-warning: #f59e0b;
 $color-error: #ef4444;
 $color-info: #3b82f6;
 
-
 /* ---------------------------------------------------------
    Typography
    --------------------------------------------------------- */
@@ -47,27 +65,21 @@ $font-body:
 
 $font-heading: $font-body;
 
-$font-mono:
-  "SFMono-Regular",
-  Consolas,
-  "Liberation Mono",
-  monospace;
-
+$font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
 /* Font sizes */
 
-$font-size-xs: 0.75rem;     // 12px
-$font-size-sm: 0.875rem;    // 14px
-$font-size-md: 1rem;        // 16px
-$font-size-lg: 1.125rem;    // 18px
-$font-size-xl: 1.25rem;     // 20px
-$font-size-2xl: 1.5rem;     // 24px
-$font-size-3xl: 1.875rem;   // 30px
-$font-size-4xl: 2.25rem;    // 36px
-$font-size-5xl: 3rem;       // 48px
-$font-size-6xl: 3.75rem;    // 60px
-$font-size-7xl: 4.5rem;     // 72px
-
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
+$font-size-6xl: 3.75rem; // 60px
+$font-size-7xl: 4.5rem; // 72px
 
 /* Font weights */
 
@@ -76,25 +88,23 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-
 /* ---------------------------------------------------------
    Spacing
    --------------------------------------------------------- */
 
-$spacing-1: 0.25rem;   // 4px
-$spacing-2: 0.5rem;    // 8px
-$spacing-3: 0.75rem;   // 12px
-$spacing-4: 1rem;      // 16px
-$spacing-5: 1.25rem;   // 20px
-$spacing-6: 1.5rem;    // 24px
-$spacing-8: 2rem;      // 32px
-$spacing-10: 2.5rem;   // 40px
-$spacing-12: 3rem;     // 48px
-$spacing-16: 4rem;      // 64px
-$spacing-20: 5rem;      // 80px
-$spacing-24: 6rem;      // 96px
-$spacing-32: 8rem;      // 128px
-
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-3: 0.75rem; // 12px
+$spacing-4: 1rem; // 16px
+$spacing-5: 1.25rem; // 20px
+$spacing-6: 1.5rem; // 24px
+$spacing-8: 2rem; // 32px
+$spacing-10: 2.5rem; // 40px
+$spacing-12: 3rem; // 48px
+$spacing-16: 4rem; // 64px
+$spacing-20: 5rem; // 80px
+$spacing-24: 6rem; // 96px
+$spacing-32: 8rem; // 128px
 
 /* ---------------------------------------------------------
    Layout
@@ -108,7 +118,6 @@ $section-spacing: 6rem;
 
 $header-height: 72px;
 
-
 /* ---------------------------------------------------------
    Breakpoints
    --------------------------------------------------------- */
@@ -118,7 +127,6 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
-
 
 /* ---------------------------------------------------------
    Border radius
@@ -132,7 +140,6 @@ $radius-2xl: 24px;
 
 $radius-full: 9999px;
 
-
 /* ---------------------------------------------------------
    Borders
    --------------------------------------------------------- */
@@ -141,23 +148,17 @@ $border-width: 1px;
 
 $border-style: solid;
 
-
 /* ---------------------------------------------------------
    Shadows
    --------------------------------------------------------- */
 
-$shadow-sm:
-  0 1px 2px rgba(15, 23, 42, 0.05);
+$shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
 
-$shadow-md:
-  0 4px 6px rgba(15, 23, 42, 0.08);
+$shadow-md: 0 4px 6px rgba(15, 23, 42, 0.08);
 
-$shadow-lg:
-  0 10px 25px rgba(15, 23, 42, 0.1);
+$shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.1);
 
-$shadow-xl:
-  0 20px 40px rgba(15, 23, 42, 0.12);
-
+$shadow-xl: 0 20px 40px rgba(15, 23, 42, 0.12);
 
 /* ---------------------------------------------------------
    Transitions
@@ -166,7 +167,6 @@ $shadow-xl:
 $transition-fast: 150ms ease;
 $transition-normal: 250ms ease;
 $transition-slow: 400ms ease;
-
 
 /* ---------------------------------------------------------
    Z-index
