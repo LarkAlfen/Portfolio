@@ -1,0 +1,6 @@
+@use "../../style/mixin" as *;
+@use "../../style/variables" as *;
+
+.projects{
+    background: $color-background-secondary;
+}

@@ -14,17 +14,25 @@
   --text-secondary: #5f565f;
   --text-muted: #807680;
   --text-disabled: #aaa2aa;
+  --logo-background: #694f68;
+  --logo-border: #694f68;
+  --logo-text: #ffffff;
 }
 
 :root.dark {
   // Background
-  --color-background: #100914;
+  --color-background: #121014;
 
   // Text
   --text-primary: #f5f3f0;
   --text-secondary: #c9c0ca;
   --text-muted: #968b98;
   --text-disabled: #665d68;
+
+  // Logo
+  --logo-background: #ffffff;
+  --logo-border: #ffffff;
+  --logo-text: #694f68;
 }
 $color-background-secondary: #100914;
 
@@ -32,9 +40,6 @@ $color-primary: #694f68;
 $color-primary-dark: #6c5e72;
 $color-primary-light: #887b8e;
 
-$color-background-secondary: #694f68;
-$color-background: #f5f3f0;
-$color-background-dark: #100914;
 
 $text-primary: #f8f5f7;
 $text-secondary: #c9bec8;
