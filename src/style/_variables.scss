@@ -17,6 +17,9 @@
   --logo-background: #694f68;
   --logo-border: #694f68;
   --logo-text: #ffffff;
+ 
+  // Hover
+  --color-hover: #6c5e72;
 }
 
 :root.dark {
@@ -33,6 +36,9 @@
   --logo-background: #ffffff;
   --logo-border: #ffffff;
   --logo-text: #694f68;
+
+  // Hover
+  --color-hover: #887b8e;
 }
 $color-background-secondary: #100914;
 

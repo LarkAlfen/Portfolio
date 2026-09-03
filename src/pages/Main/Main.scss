@@ -1,0 +1,505 @@
+@use "../../style/mixin" as *;
+@use "../../style/variables" as *;
+
+.main {
+  @include container(1200px);
+
+  min-height: 100vh;
+
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+
+.hero {
+  width: 100%;
+
+  color: var(--text-primary);
+
+  &__intro-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+    align-items: center;
+    gap: clamp(30px, 5vw, 80px);
+
+    margin-bottom: 45px;
+  }
+
+  // =========================
+  // TITRE
+  // =========================
+
+  &__heading {
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+
+    color: var(--text-primary);
+
+    span {
+      display: block;
+      white-space: nowrap;
+      &:first-child {
+        font-size: clamp(3rem, 7vw, 7rem);
+      }
+      &:last-child {
+        font-size: clamp(3.8rem, 7.8vw, 7.6rem);
+        font-weight: 600;
+      }
+    }
+  }
+
+  // =========================
+  // DESCRIPTION + CTA
+  // =========================
+
+  &__intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+
+    padding-top: 20px;
+  }
+
+  &__description {
+    max-width: 340px;
+
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.65;
+
+    color: var(--text-secondary);
+  }
+
+  // =========================
+  // BOUTON PROJETS
+  // =========================
+
+  &__projects {
+    width: 100%;
+    max-width: 320px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--text-primary);
+    text-decoration: none;
+
+    span:first-child {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+      padding: 0 28px;
+
+      background-color: var(--logo-background);
+      color: var(--logo-text);
+      border-radius: 999px;
+
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    &:hover {
+      span:first-child {
+        background-color: var(--color-hover);
+        color: white;
+      }
+    }
+  }
+
+  // =========================
+  // MILIEU
+  // =========================
+
+  &__middle {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    align-items: center;
+    gap: 60px;
+
+    margin-top: -5px;
+  }
+
+  &__description {
+    max-width: 290px;
+
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.55;
+
+    color: var(--text-secondary);
+  }
+
+  // =========================
+  // SKILLS
+  // =========================
+
+  &__skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 45px;
+    margin-bottom: 28px;
+
+    span {
+      padding: 9px 18px;
+
+      border: 1px solid var(--border-primary);
+      border-radius: 999px;
+
+      font-size: 0.78rem;
+      font-weight: 500;
+
+      color: var(--text-secondary);
+
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+      &:hover {
+        background-color: #694f68;
+        border-color: #694f68;
+
+        color: #fff;
+
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // =========================
+  // PARTIE BASSE
+  // =========================
+
+  &__showcase {
+    display: grid;
+    grid-template-columns: 1fr 2.2fr 1fr;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  // =========================
+  // CARTE CENTRALE
+  // =========================
+
+  &__profile {
+    min-height: 250px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    overflow: hidden;
+
+    background-color: #694f68;
+
+    border-radius: 30px;
+  }
+
+  &__profile-photo {
+    min-height: 100%;
+
+    overflow: hidden;
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 30px;
+
+    color: #fff;
+
+    h2 {
+      margin: 10px 0 12px;
+
+      font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+      font-weight: 500;
+      line-height: 1;
+
+      letter-spacing: -0.035em;
+    }
+
+    p {
+      max-width: 300px;
+
+      margin: 0;
+
+      font-size: 0.9rem;
+      line-height: 1.5;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+  }
+
+  &__profile-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  &__profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    span {
+      width: 32px;
+      height: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #fff;
+      color: #694f68;
+
+      border-radius: 50%;
+
+      transition: transform 0.2s ease;
+    }
+
+    &:hover span {
+      transform: translateX(4px);
+    }
+  }
+
+  // =========================
+  // CARTES LATÉRALES
+  // =========================
+
+  &__side-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 250px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    strong {
+      margin-top: auto;
+
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 8px 0 0;
+
+      font-size: 0.8rem;
+      line-height: 1.45;
+
+      color: var(--text-secondary);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+
+      width: 140px;
+      height: 140px;
+
+      border: 1px solid var(--border-primary);
+      border-radius: 50%;
+
+      opacity: 0.7;
+    }
+
+    &--left::after {
+      bottom: -80px;
+      left: -50px;
+    }
+
+    &--right::after {
+      top: -70px;
+      right: -45px;
+    }
+  }
+
+  &__side-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: var(--text-secondary);
+  }
+}
+
+// =====================================
+// TABLETTE
+// =====================================
+
+@media (max-width: 850px) {
+  .main {
+    padding-top: 110px;
+  }
+
+  .hero {
+    &__intro-layout {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    &__title {
+      line-height: 0.88;
+      span {
+        text-align: center;
+      }
+    }
+
+    &__intro-content {
+      padding-top: 0;
+    }
+
+    &__description {
+      max-width: 500px;
+      
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__projects {
+      width: 100%;
+      max-width: 320px;
+
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__middle {
+      grid-template-columns: 1fr;
+
+      gap: 25px;
+
+      margin-top: 30px;
+    }
+
+    &__showcase {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__profile {
+      grid-column: 1 / -1;
+
+      order: -1;
+    }
+  }
+}
+
+// =====================================
+// MOBILE
+// =====================================
+
+@media (max-width: 600px) {
+  .main {
+    padding-top: 95px;
+    padding-bottom: 50px;
+  }
+
+  .hero {
+    &__title {
+      font-size: clamp(3.5rem, 18vw, 5rem);
+      line-height: 0.88;
+      span {
+        text-align: center;
+      }
+    }
+
+    &__intro-layout {
+      gap: 28px;
+      margin-bottom: 35px;
+    }
+
+    &__projects {
+      min-width: 0;
+      max-width: none;
+    }
+
+    &__description {
+      max-width: 100%;
+    }
+
+    &__skills {
+      justify-content: flex-start;
+
+      margin-top: 35px;
+    }
+
+    &__showcase {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__profile {
+      grid-template-columns: 1fr;
+    }
+
+    &__profile-photo {
+      aspect-ratio: 4 / 3;
+    }
+
+    &__profile-content {
+      min-height: 250px;
+    }
+
+    &__side-card {
+      min-height: 190px;
+    }
+  }
+}
