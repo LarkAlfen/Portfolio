@@ -21,7 +21,7 @@
   }
 
   &__container {
-    @include container(1200px);
+    @include container(100%);
 
     display: flex;
     align-items: center;

@@ -2,7 +2,7 @@
 @use "../../style/variables" as *;
 
 .main {
-  @include container(1200px);
+  @include container(1600px);
 
   min-height: 100vh;
 
@@ -105,7 +105,7 @@
       padding: 0 28px;
 
       border: 1px solid var(--border);
-      border-radius: 999px;
+      border-radius: 2px;
 
       transition:
         background-color 0.25s ease,
@@ -156,9 +156,6 @@
     grid-template-columns: 0.9fr 1.1fr;
 
     overflow: hidden;
-
-
-    border-radius: 8px;
   }
 
   &__profile-photo {
@@ -171,7 +168,8 @@
 
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      max-height: 800px;
+      object-fit: contain;
     }
   }
 
@@ -206,7 +204,6 @@
     }
   }
 
-
   &__profile-link {
     display: flex;
     align-items: center;
@@ -240,7 +237,6 @@
       transform: translateX(4px);
     }
   }
-
 }
 
 // =====================================
@@ -271,7 +267,7 @@
 
     &__description {
       max-width: 500px;
-      
+
       margin-left: auto;
       margin-right: auto;
     }
@@ -330,7 +326,7 @@
     }
 
     &__description {
-      max-width: 100%;
+      max-width: 85%;
     }
 
     &__skills {
@@ -355,6 +351,5 @@
     &__profile-content {
       min-height: 250px;
     }
-
   }
 }

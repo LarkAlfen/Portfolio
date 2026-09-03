@@ -7,8 +7,6 @@ import "./Header.scss";
 export function Header() {
   const { darkMode, toggleDarkMode } = useTheme();
 
-  const [visible, setVisible] = useState(true);
-
   useEffect(() => {
     requestAnimationFrame(() => {
       document.documentElement.classList.add("theme-ready")
@@ -18,7 +16,7 @@ export function Header() {
 
   return (
     <header
-      className={`header ${visible ? "header--visible" : "header--hidden"}`}
+      className={`header`}
     >
       <div className="header__container">
 
