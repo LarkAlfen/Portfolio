@@ -2,7 +2,7 @@ import "./Main.scss"
 
 export function Main() {
   return (
-    <main className="main" id="home">
+    <main className="main section" id="main">
       <section className="hero">
         <div className="hero__intro-layout">
           <div className="hero__heading">
@@ -24,42 +24,18 @@ export function Main() {
           </div>
         </div>
 
-        <div className="hero__skills">
-          <span>React</span>
-          <span>JavaScript</span>
-          <span>TypeScript</span>
-          <span>SCSS</span>
-          <span>UI / UX</span>
-        </div>
-
         <div className="hero__showcase">
-          <div className="hero__side-card hero__side-card--left">
-            <span className="hero__side-label">
-              Expérience
-            </span>
 
-            <strong>
-              7+
-            </strong>
-
-            <p>
-              années dans le développement front-end
-            </p>
-          </div>
 
           <article className="hero__profile">
             <div className="hero__profile-photo">
               <img
-                src="/images/profile.jpg"
+                src="https://picsum.photos/id/237/200/300"
                 alt="Portrait d'Allan"
               />
             </div>
 
             <div className="hero__profile-content">
-              <span className="hero__profile-label">
-                À propos
-              </span>
-
               <h2>
                 Allan,
                 <br />
@@ -80,20 +56,6 @@ export function Main() {
               </a>
             </div>
           </article>
-
-          <div className="hero__side-card hero__side-card--right">
-            <span className="hero__side-label">
-              Actuellement
-            </span>
-
-            <strong>
-              Disponible
-            </strong>
-
-            <p>
-              pour de nouvelles opportunités
-            </p>
-          </div>
         </div>
       </section>
     </main>

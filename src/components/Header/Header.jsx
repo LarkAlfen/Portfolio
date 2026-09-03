@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import moonIcon from "../../assets/moon.png"
+import sunIcon from "../../assets/sun.png"
 import "./Header.scss";
 
 export function Header() {
@@ -8,33 +10,11 @@ export function Header() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    let previousScroll = window.scrollY;
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add("theme-ready")
+    })
+  }, [])
 
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll < previousScroll) {
-        // On remonte
-        setVisible(true);
-      } else if (currentScroll > previousScroll) {
-        // On descend
-        setVisible(false);
-      }
-
-      // Toujours afficher le header en haut de page
-      if (currentScroll < 50) {
-        setVisible(true);
-      }
-
-      previousScroll = currentScroll;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
@@ -64,9 +44,8 @@ export function Header() {
 
         <button
           type="button"
-          className={`theme-switch ${
-            darkMode ? "theme-switch--dark" : ""
-          }`}
+          className={`theme-switch ${darkMode ? "theme-switch--dark" : ""
+            }`}
           onClick={toggleDarkMode}
           aria-label={
             darkMode
@@ -75,7 +54,14 @@ export function Header() {
           }
           aria-pressed={darkMode}
         >
-          <span className="theme-switch__thumb" />
+          <span className="theme-switch__thumb" >
+            <img
+              src={darkMode ? moonIcon : sunIcon}
+              alt=""
+              className="theme-switch__icon"
+            />
+          </span>
+
         </button>
 
       </div>

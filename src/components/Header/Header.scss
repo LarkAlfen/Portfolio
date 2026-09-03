@@ -38,8 +38,8 @@
     justify-content: center;
     gap: 1px;
 
-    background-color: var(--logo-background);
-    border: 2px solid var(--logo-border);
+    background-color: var(--background);
+    border: 2px solid var(--border);
     border-radius: 10px;
 
     transition:
@@ -47,7 +47,7 @@
       background-color 0.2s ease,
       transform 0.2s ease;
     &__letter {
-      color: var(--logo-text);
+      color: var(--text);
       font-family: "Satoshi", sans-serif;
       font-size: 20px;
       font-weight: 500;
@@ -119,10 +119,10 @@
 
   padding: 0;
 
-  border: 1px solid $color-border;
+  border: 1px solid var(--border);
   border-radius: 999px;
 
-  background-color: #e2e8f0;
+  background-color: var(--color-background);
 
   cursor: pointer;
 
@@ -137,22 +137,29 @@
     height: 18px;
 
     border-radius: 50%;
-    background-color: var(--logo-background);
     transition: background-color 0.2 ease;
 
     transition: transform 0.2s ease;
   }
 
-  &--dark {
-    background-color: $color-primary;
+    &__icon {
+      width: 16px;
+      height: 16px;
 
+      object-fit: contain;
+
+      pointer-events: none;
+    }
+
+
+  &--dark {
     .theme-switch__thumb {
+      filter: invert(1);
       transform: translateX(22px);
     }
   }
 
   &:focus-visible {
-    outline: 2px solid $color-primary;
     outline-offset: 3px;
   }
 }

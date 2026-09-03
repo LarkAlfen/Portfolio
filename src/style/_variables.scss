@@ -7,45 +7,48 @@
    --------------------------------------------------------- */
 :root {
   // Background
-  --color-background: #f5f3f0;
+  --color-background: #f8f9fa;
 
   // Text
-  --text-primary: #241f24;
-  --text-secondary: #5f565f;
-  --text-muted: #807680;
-  --text-disabled: #aaa2aa;
-  --logo-background: #694f68;
-  --logo-border: #694f68;
-  --logo-text: #ffffff;
- 
+  --text-primary: #212529;
+  --text-secondary: #343a40;
+  --text-muted: #6c757d;
+  --text-disabled: #ced4da;
+  --text-inverted: #f8f9fa;
+
+  //logo + buttons
+  --background: #212529;
+  --border: #212529;
+  --text: #ffffff;
+
   // Hover
-  --color-hover: #6c5e72;
+  --color-hover: #212529;
 }
 
 :root.dark {
   // Background
-  --color-background: #121014;
+  --color-background: #0e0f11;
 
   // Text
-  --text-primary: #f5f3f0;
-  --text-secondary: #c9c0ca;
-  --text-muted: #968b98;
-  --text-disabled: #665d68;
+  --text-primary: #f8f9fa;
+  --text-secondary: #dee2e6;
+  --text-muted: #ced4da;
+  --text-disabled: #adb5bd;
+  --text-inverted: #212529;
 
   // Logo
-  --logo-background: #ffffff;
-  --logo-border: #ffffff;
-  --logo-text: #694f68;
+  --background: #ffffff;
+  --border: #ffffff;
+  --text: #0e0f11;
 
   // Hover
-  --color-hover: #887b8e;
+  --color-hover: #212529;
 }
 $color-background-secondary: #100914;
 
 $color-primary: #694f68;
 $color-primary-dark: #6c5e72;
 $color-primary-light: #887b8e;
-
 
 $text-primary: #f8f5f7;
 $text-secondary: #c9bec8;
