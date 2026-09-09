@@ -161,8 +161,8 @@ pre {
    --------------------------------------------------------- */
 
 ::selection {
-  background-color: currentColor;
-  color: white;
+  background-color: var(--selection-background);
+  color: var(--selection-text);
 }
 
 

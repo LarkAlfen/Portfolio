@@ -19,10 +19,16 @@
   //logo + buttons
   --background: #212529;
   --border: #212529;
-  --text: #ffffff;
+  --text: #f8f9fa;
 
   // Hover
   --color-hover: #212529;
+  --text-hover: #6c757d;
+
+
+  // Selection
+  --selection-background: #0e0f11;
+  --selection-text: #f8f9fa;
 }
 
 :root.dark {
@@ -43,6 +49,11 @@
 
   // Hover
   --color-hover: #212529;
+  --color-text-hover: #adb5bd;
+
+  // Selection
+  --selection-background: #f8f9fa;
+  --selection-text: #0e0f11;
 }
 $color-background-secondary: #100914;
 
