@@ -1,88 +1,124 @@
-import { useForm } from '@formspree/react';
-import './Contact.scss'
+import { useEffect, useState } from "react";
+import { useForm } from "@formspree/react";
+
+import { ContactToast } from "../../components/ContactToast/ContactToast";
+
+import "./Contact.scss";
+import "../../components/ContactToast/ContactToast.scss";
 
 export function Contact() {
     const [state, handleSubmit] = useForm("mwlpowpw");
+
+    const [toast, setToast] = useState({
+        show: false,
+        type: "success",
+    });
+
+    useEffect(() => {
+        if (!state.succeeded) return;
+
+        setToast({
+            show: true,
+            type: "success",
+        });
+
+        const timeout = setTimeout(() => {
+            setToast((current) => ({
+                ...current,
+                show: false,
+            }));
+        }, 4000);
+
+        return () => clearTimeout(timeout);
+    }, [state.succeeded]);
+
     return (
-        <section className="contact" id="contact">
-            <h1 className='contact__title'>Contact</h1>
-            <form className="contact__form" onSubmit={handleSubmit}>
-                <div className="contact__field">
-                    <label className="contact__field-label" htmlFor="name">
-                        Nom
-                    </label>
+        <>
+            <section className="contact" id="contact">
+                <h1 className='contact__title'>Contact</h1>
+                <form className="contact__form" onSubmit={handleSubmit}>
+                    <div className="contact__field">
+                        <label className="contact__field-label" htmlFor="name">
+                            Nom
+                        </label>
 
-                    <input
-                        className="contact__input"
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Votre nom"
-                        autoComplete="name"
-                        required
-                    />
-                </div>
+                        <input
+                            className="contact__input"
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Votre nom"
+                            autoComplete="name"
+                            required
+                        />
+                    </div>
 
-                <div className="contact__field">
-                    <label className="contact__field-label" htmlFor="email">
-                        Email
-                    </label>
+                    <div className="contact__field">
+                        <label className="contact__field-label" htmlFor="email">
+                            Email
+                        </label>
 
-                    <input
-                        className="contact__input"
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="votre@email.com"
-                        autoComplete="email"
-                        required
-                    />
-                </div>
+                        <input
+                            className="contact__input"
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="votre@email.com"
+                            autoComplete="email"
+                            required
+                        />
+                    </div>
 
-                <div className="contact__field">
-                    <label className="contact__field-label" htmlFor="subject">
-                        Sujet
-                    </label>
+                    <div className="contact__field">
+                        <label className="contact__field-label" htmlFor="subject">
+                            Sujet
+                        </label>
 
-                    <input
-                        className="contact__input"
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="Sujet"
-                        required
-                    />
-                </div>
+                        <input
+                            className="contact__input"
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Sujet"
+                            required
+                        />
+                    </div>
 
-                <div className="contact__field">
-                    <label className="contact__field-label" htmlFor="message">
-                        Message
-                    </label>
+                    <div className="contact__field">
+                        <label className="contact__field-label" htmlFor="message">
+                            Message
+                        </label>
 
-                    <textarea
-                        className="contact__textarea"
-                        id="message"
-                        name="message"
-                        placeholder="Votre message"
-                        rows="6"
-                        required
-                    />
-                </div>
-                <button
-                    className="contact__submit"
-                    type="submit"
-                    disabled={state.submitting}
-                >
-                    {state.submitting ? "Envoi..." : "Envoyer le message"}
-
-                    <span
-                        className="contact__submit-arrow"
-                        aria-hidden="true"
+                        <textarea
+                            className="contact__textarea"
+                            id="message"
+                            name="message"
+                            placeholder="Votre message"
+                            rows="6"
+                            required
+                        />
+                    </div>
+                    <button
+                        className="contact__submit"
+                        type="submit"
+                        disabled={state.submitting}
                     >
-                        →
-                    </span>
-                </button>
-            </form>
-        </section>
+                        {state.submitting ? "Envoi..." : "Envoyer le message"}
+
+                        <span
+                            className="contact__submit-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+                    </button>
+                </form>
+            </section>
+
+            <ContactToast
+                show={toast.show}
+                type={toast.type}
+            />
+        </>
     );
 }

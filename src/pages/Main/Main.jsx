@@ -36,23 +36,22 @@ export function Main() {
             </div>
 
             <div className="hero__profile-content">
-              <h2>
-                Allan,
-                <br />
-                développeur front-end
-              </h2>
+              <div className="hero__profile-text">
+                <h2>
+                  Allan,
+                  <br />
+                  développeur front-end
+                </h2>
 
-              <p>
-                J'aime transformer des idées en expériences web simples,
-                intuitives et soignées.
-              </p>
+                <p>
+                  J'aime transformer des idées en expériences web simples,
+                  intuitives et soignées.
+                </p>
+              </div>
 
               <a href="#about" className="hero__profile-link">
                 En savoir plus
-
-                <span>
-                  →
-                </span>
+                <span>→</span>
               </a>
             </div>
           </article>

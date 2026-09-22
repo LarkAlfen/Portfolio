@@ -1,0 +1,81 @@
+.project-card {
+  width: 420px;
+  height: 520px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--text-primary);
+
+  overflow: hidden;
+
+  &__visual {
+    position: relative;
+
+    height: 70%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__background {
+    position: absolute;
+    inset: -10px;
+
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(8px);
+    transform: scale(1.05);
+
+    transition:
+      filter 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  &__visual:hover &__background {
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+
+    // Pour garder le titre lisible sur l'image
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  }
+
+  &__content {
+    height: 30%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 24px;
+
+    background-color: var(--color-background);
+    border-top: 1px solid var(--text-primary);
+  }
+
+  &__description {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
