@@ -39,13 +39,10 @@ export function Main() {
               <div className="hero__profile-text">
                 <h2>
                   Allan,
-                  <br />
-                  développeur front-end
                 </h2>
 
                 <p>
-                  J'aime transformer des idées en expériences web simples,
-                  intuitives et soignées.
+                  Développeur Front-end avec 7 ans d'expérience, passionné par le web et le digital, j'aime apprendre et développer mes compétences dans le domaine du web.
                 </p>
               </div>
 

@@ -1,6 +1,8 @@
 .project-card {
-  width: 420px;
-  height: 520px;
+  width: 100%;
+  height: var(--card-height);
+
+  user-select: none;
 
   display: flex;
   flex-direction: column;
@@ -14,22 +16,25 @@
     position: relative;
 
     height: 70%;
-    overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
   }
 
   &__background {
     position: absolute;
+
     inset: -10px;
 
     background-image: inherit;
     background-size: cover;
     background-position: center;
 
-    filter: blur(8px);
+    filter: blur(8px) grayscale(1);
+
     transform: scale(1.05);
 
     transition:
@@ -38,12 +43,14 @@
   }
 
   &__visual:hover &__background {
-    filter: blur(0);
+    filter: blur(0) grayscale(0);
+
     transform: scale(1);
   }
 
   &__title {
     position: relative;
+
     z-index: 1;
 
     margin: 0;
@@ -51,10 +58,11 @@
     color: var(--text-primary);
 
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
+
+    text-transform: uppercase;
     text-align: center;
 
-    // Pour garder le titre lisible sur l'image
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
   }
 
@@ -67,6 +75,7 @@
     padding: 24px;
 
     background-color: var(--color-background);
+
     border-top: 1px solid var(--text-primary);
   }
 
@@ -76,6 +85,28 @@
     color: var(--text-primary);
 
     font-size: 1rem;
+    font-weight: 300;
     line-height: 1.6;
+  }
+}
+
+// =========================
+// MOBILE
+// =========================
+
+@media (max-width: 768px) {
+  .project-card {
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__content {
+      padding: 18px;
+    }
+
+    &__description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
   }
 }

@@ -48,9 +48,8 @@
       transform 0.2s ease;
     &__letter {
       color: var(--text);
-      font-family: "Satoshi", sans-serif;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 300;
       line-height: 1;
 
       transform: translateY(-1px);
@@ -68,7 +67,7 @@
 
     color: var(--text-primary);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 300;
     text-decoration: none;
 
     transition:

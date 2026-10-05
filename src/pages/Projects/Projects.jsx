@@ -17,13 +17,7 @@ const projects = [
       "Une boîte de dialogue de confirmation réutilisable basée sur les Promises.",
     image: "https://picsum.photos/id/217/200/300",
   },
-  {
-    id: 3,
-    title: "Portfolio",
-    description:
-      "Mon portfolio personnel développé avec React, Vite et SCSS.",
-    image: "https://picsum.photos/id/216/200/300",
-  },
+
 ];
 
 const mod = (number, length) =>
@@ -128,9 +122,9 @@ export function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <h2 className="projects__title">
+      <h1 className="projects__title">
         Mes projets
-      </h2>
+      </h1>
 
       <div className="projects__carousel">
         <button

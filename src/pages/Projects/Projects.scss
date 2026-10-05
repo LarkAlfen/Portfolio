@@ -2,8 +2,21 @@
 
 .projects {
   @include container(1600px);
+
+  // =========================
+  // VARIABLES CAROUSEL
+  // =========================
+
+  --card-width: 420px;
+  --card-height: 520px;
+  --carousel-gap: 50px;
+  --carousel-step: calc(
+    var(--card-width) + var(--carousel-gap)
+  );
+
   padding-top: 130px;
   padding-bottom: 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,12 +24,12 @@
   overflow: hidden;
 
   &__title {
-    margin-bottom: 50px;
-
     color: var(--text-primary);
+    text-transform: uppercase;
 
-    font-size: 3rem;
-    text-align: center;
+    margin-bottom: 35px;
+
+    font-weight: 500;
   }
 
   // =========================
@@ -55,7 +68,7 @@
     display: flex;
     align-items: center;
 
-    gap: 50px;
+    gap: var(--carousel-gap);
 
     transform:
       translate(-50%, -50%)
@@ -68,17 +81,17 @@
     &--next {
       transform:
         translate(-50%, -50%)
-        translateX(-470px);
+        translateX(calc(var(--carousel-step) * -1));
     }
 
     // Déplacement vers la gauche
     &--previous {
       transform:
         translate(-50%, -50%)
-        translateX(470px);
+        translateX(var(--carousel-step));
     }
 
-    // Utilisé lors du repositionnement invisible
+    // Repositionnement invisible
     &--no-transition {
       transition: none;
     }
@@ -89,7 +102,7 @@
   // =========================
 
   &__slide {
-    flex: 0 0 420px;
+    flex: 0 0 var(--card-width);
 
     opacity: 0;
 
@@ -173,6 +186,7 @@
     font-size: 1.5rem;
 
     cursor: pointer;
+    user-select: none;
 
     transform: translateY(-50%);
 
@@ -236,6 +250,51 @@
 
     &--active {
       background-color: var(--text-primary);
+    }
+  }
+
+  // =========================
+  // MOBILE
+  // =========================
+
+  @media (max-width: 768px) {
+    --card-width: min(280px, 72vw);
+    --card-height: 400px;
+    --carousel-gap: 20px;
+
+    padding-top: 100px;
+    padding-bottom: 30px;
+
+    &__title {
+      margin-bottom: 25px;
+    }
+
+    &__carousel {
+      height: 430px;
+    }
+
+    &__arrow {
+      width: 42px;
+      height: 42px;
+
+      font-size: 1.2rem;
+
+      &--left {
+        left: 15px;
+      }
+
+      &--right {
+        right: 15px;
+      }
+    }
+
+    &__pagination {
+      margin-top: 16px;
+    }
+
+    &__dot {
+      width: 8px;
+      height: 8px;
     }
   }
 }

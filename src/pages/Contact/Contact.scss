@@ -64,7 +64,7 @@
 
   &__field-label {
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 400;
 
     color: var(--text-secondary);
   }
@@ -75,11 +75,11 @@
 
     padding: 14px 0;
 
-    font-family: inherit;
     font-size: 1rem;
 
     color: var(--text-primary);
     background: transparent;
+    font-weight: 300;
 
     border: 0;
     border-bottom: 1px solid var(--text-disabled);
@@ -113,7 +113,6 @@
     margin-top: 8px;
     padding: 14px 22px;
 
-    font-family: inherit;
     font-size: 0.95rem;
     font-weight: 500;
 
@@ -151,5 +150,12 @@
     &__form {
       gap: 26px;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    padding-inline: 16px;
+    padding-bottom: 40px;
   }
 }
