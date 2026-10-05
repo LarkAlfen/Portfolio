@@ -1,10 +1,26 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { motion } from "motion/react";
 import moonIcon from "../../assets/moon.png"
 import sunIcon from "../../assets/sun.png"
 import "./Header.scss";
 
-export function Header() {
+
+const fadeIn = {
+  hidden: {
+    opacity: 0,
+  },
+
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+export function Header({ introFinished }) {
   const { darkMode, toggleDarkMode } = useTheme();
 
   useEffect(() => {
@@ -18,14 +34,37 @@ export function Header() {
     <header
       className={`header`}
     >
-      <div className="header__container">
+      <div
 
-        <a href="#" className="header__logo">
+        className="header__container">
+
+        <motion.a
+          variants={fadeIn}
+          initial="hidden"
+          animate={introFinished ? "visible" : "hidden"}
+          href="#" className="header__logo">
           <span className="header__logo__letter">A</span>
           <span className="header__logo__letter">T</span>
-        </a>
+        </motion.a>
 
-        <nav className="header__nav" aria-label="Navigation principale">
+        <motion.nav
+          initial={{
+            clipPath: "inset(100% 0 0 0)",
+          }}
+          animate={
+            introFinished
+              ? {
+                clipPath: "inset(0% 0 0 0)",
+              }
+              : {
+                clipPath: "inset(100% 0 0 0)",
+              }
+          }
+          transition={{
+            duration: 0.8,
+            ease: [0.76, 0, 0.24, 1],
+          }}
+          className="header__nav" aria-label="Navigation principale">
 
           <a href="#projects" className="header__link">
             Projets
@@ -38,9 +77,12 @@ export function Header() {
           <a href="#contact" className="header__link">
             Contact
           </a>
-        </nav>
+        </motion.nav>
 
-        <button
+        <motion.button
+          variants={fadeIn}
+          initial="hidden"
+          animate={introFinished ? "visible" : "hidden"}
           type="button"
           className={`theme-switch ${darkMode ? "theme-switch--dark" : ""
             }`}
@@ -60,7 +102,7 @@ export function Header() {
             />
           </span>
 
-        </button>
+        </motion.button>
 
       </div>
     </header>

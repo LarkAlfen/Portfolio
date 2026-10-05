@@ -7,10 +7,10 @@
    --------------------------------------------------------- */
 :root {
   // Background
-  --color-background: #f8f9fa;
+  --color-background: #fff;
 
   // Text
-  --text-primary: #212529;
+  --text-primary: black;
   --text-secondary: #343a40;
   --text-muted: #6c757d;
   --text-disabled: #ced4da;
@@ -22,7 +22,7 @@
   --text: #f8f9fa;
 
   // Hover
-  --color-hover: #212529;
+  --color-hover: black;
   --text-hover: #6c757d;
 
 
@@ -33,10 +33,10 @@
 
 :root.dark {
   // Background
-  --color-background: #0e0f11;
+  --color-background: black;
 
   // Text
-  --text-primary: #f8f9fa;
+  --text-primary: #fff;
   --text-secondary: #dee2e6;
   --text-muted: #ced4da;
   --text-disabled: #adb5bd;
