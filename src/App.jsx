@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Header } from './components/Header/Header'
 import Loader from './components/Loader/Loader'
 import { About } from './pages/About/About'
@@ -9,7 +9,24 @@ import './style/App.scss'
 
 function App() {
   const [introFinished, setIntroFinished] = useState(false);
+useEffect(() => {
+  history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
 
+  document.body.style.overflow = "hidden";
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, []);
+
+useEffect(() => {
+  document.body.classList.toggle("no-scroll", !introFinished);
+
+  return () => {
+    document.body.classList.remove("no-scroll");
+  };
+}, [introFinished]);
 
   return (
     <>

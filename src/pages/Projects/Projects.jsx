@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
+import { motion } from "motion/react";
 import "./Projects.scss";
 
 const projects = [
@@ -19,6 +20,21 @@ const projects = [
   },
 
 ];
+
+const clipIn = {
+  hidden: {
+    clipPath: "inset(100% 0 0 0)",
+  },
+
+  visible: {
+    clipPath: "inset(0% 0 0 0)",
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    }
+  }
+}
+
 
 const mod = (number, length) =>
   ((number % length) + length) % length;
@@ -122,11 +138,27 @@ export function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <h1 className="projects__title">
+      <motion.h1
+        variants={clipIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          margin: "0px 0px -100px 0px",
+        }}
+        className="projects__title">
         Mes projets
-      </h1>
+      </motion.h1>
 
-      <div className="projects__carousel">
+      <motion.div
+        variants={clipIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          margin: "0px 0px -100px 0px",
+        }}
+        className="projects__carousel">
         <button
           className="projects__arrow projects__arrow--left"
           onClick={previousProject}
@@ -140,15 +172,13 @@ export function Projects() {
           <div
             className={`
               projects__track
-              ${
-                direction
-                  ? `projects__track--${direction}`
-                  : ""
+              ${direction
+                ? `projects__track--${direction}`
+                : ""
               }
-              ${
-                disableTransition
-                  ? "projects__track--no-transition"
-                  : ""
+              ${disableTransition
+                ? "projects__track--no-transition"
+                : ""
               }
             `}
             onTransitionEnd={handleTransitionEnd}
@@ -186,35 +216,29 @@ export function Projects() {
                   key={project.carouselId}
                   className={`
                     projects__slide
-                    ${
-                      isVisible
-                        ? "projects__slide--visible"
-                        : ""
+                    ${isVisible
+                      ? "projects__slide--visible"
+                      : ""
                     }
-                    ${
-                      isActive && !leavesActive
-                        ? "projects__slide--active"
-                        : ""
+                    ${isActive && !leavesActive
+                      ? "projects__slide--active"
+                      : ""
                     }
-                    ${
-                      becomesActive
-                        ? "projects__slide--becomes-active"
-                        : ""
+                    ${becomesActive
+                      ? "projects__slide--becomes-active"
+                      : ""
                     }
-                    ${
-                      leavesActive
-                        ? "projects__slide--leaves-active"
-                        : ""
+                    ${leavesActive
+                      ? "projects__slide--leaves-active"
+                      : ""
                     }
-                    ${
-                      entersVisible
-                        ? "projects__slide--enters-visible"
-                        : ""
+                    ${entersVisible
+                      ? "projects__slide--enters-visible"
+                      : ""
                     }
-                    ${
-                      leavesVisible
-                        ? "projects__slide--leaves-visible"
-                        : ""
+                    ${leavesVisible
+                      ? "projects__slide--leaves-visible"
+                      : ""
                     }
                   `}
                 >
@@ -233,7 +257,7 @@ export function Projects() {
         >
           →
         </button>
-      </div>
+      </motion.div>
 
       {/* Pagination */}
       <div
@@ -243,11 +267,10 @@ export function Projects() {
         {projects.map((project, index) => (
           <span
             key={project.id}
-            className={`projects__dot ${
-              index === activeIndex
-                ? "projects__dot--active"
-                : ""
-            }`}
+            className={`projects__dot ${index === activeIndex
+              ? "projects__dot--active"
+              : ""
+              }`}
           />
         ))}
       </div>

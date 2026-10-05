@@ -7,7 +7,7 @@ export default function Loader({ onFinished }) {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const duration = 1800;
+    const duration = 1400;
     const intervalTime = 20;
     const steps = duration / intervalTime;
     const increment = 100 / steps;

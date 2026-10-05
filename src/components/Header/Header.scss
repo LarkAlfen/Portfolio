@@ -38,16 +38,15 @@
     justify-content: center;
     gap: 1px;
 
-    background-color: var(--background);
+    background-color: var(--color-background);
     border: 2px solid var(--border);
-    border-radius: 10px;
 
     transition:
       color 0.2s ease,
       background-color 0.2s ease,
       transform 0.2s ease;
     &__letter {
-      color: var(--text);
+      color: var(--text-primary);
       font-size: 20px;
       font-weight: 300;
       line-height: 1;
@@ -103,7 +102,6 @@
   padding: 0;
 
   border: 1px solid var(--border);
-  border-radius: 999px;
 
   background-color: var(--color-background);
 

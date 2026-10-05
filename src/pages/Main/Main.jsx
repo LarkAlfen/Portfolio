@@ -1,18 +1,88 @@
 import "./Main.scss"
+import { motion } from "motion/react";
 
-export function Main() {
+
+export function Main({ introFinished }) {
   return (
     <main className="main section" id="main">
       <section className="hero">
         <div className="hero__intro-layout">
           <div className="hero__heading">
             <h1 className="hero__title">
-              <span>Front-End</span>
-              <span>Developer</span>
+              <motion.span
+                initial={{
+                  x: "10%",
+                  opacity: 0,
+                }}
+                animate={
+                  introFinished
+                    ? {
+                      x: "0%",
+                      opacity: 1,
+                    }
+                    : {
+                      x: "10%",
+                      opacity: 0,
+                    }
+                }
+                transition={{
+                  x: {
+                    duration: 0.8,
+                  },
+                  opacity: {
+                    duration: 0.5,
+                    delay: 0.1
+                  },
+                }}
+              >Front-End</motion.span>
+              <motion.span
+                initial={{
+                  x: "-10%",
+                  opacity: 0,
+                }}
+                animate={
+                  introFinished
+                    ? {
+                      x: "0%",
+                      opacity: 1,
+                    }
+                    : {
+                      x: "-10%",
+                      opacity: 0,
+                    }
+                }
+                transition={{
+                  x: {
+                    duration: 0.8,
+                    delay: 0.2
+                  },
+                  opacity: {
+                    duration: 0.5,
+                    delay: 0.3
+                  },
+                }}
+              >Developer</motion.span>
             </h1>
           </div>
 
-          <div className="hero__intro-content">
+          <motion.div
+            initial={{
+              clipPath: "inset(100% 0 0 0)",
+            }}
+            animate={
+              introFinished
+                ? {
+                  clipPath: "inset(0% 0 0 0)",
+                }
+                : {
+                  clipPath: "inset(100% 0 0 0)",
+                }
+            }
+            transition={{
+              duration: 0.8,
+              ease: [0.76, 0, 0.24, 1],
+            }}
+            className="hero__intro-content">
             <p className="hero__description">
               Je conçois des interfaces web modernes, accessibles et agréables à
               utiliser, avec une attention particulière portée aux détails.
@@ -21,10 +91,27 @@ export function Main() {
             <a href="#projects" className="hero__projects">
               <span>Mes projets →</span>
             </a>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="hero__showcase">
+        <motion.div
+          initial={{
+            clipPath: "inset(100% 0 0 0)",
+          }}
+          animate={
+            introFinished
+              ? {
+                clipPath: "inset(0% 0 0 0)",
+              }
+              : {
+                clipPath: "inset(100% 0 0 0)",
+              }
+          }
+          transition={{
+            duration: 0.8,
+            ease: [0.76, 0, 0.24, 1],
+          }}
+          className="hero__showcase">
 
 
           <article className="hero__profile">
@@ -52,7 +139,7 @@ export function Main() {
               </a>
             </div>
           </article>
-        </div>
+        </motion.div>
       </section>
     </main>
   )

@@ -4,6 +4,7 @@
 .main {
   @include container(1600px);
 
+  min-height: 100vh;
 
   padding-top: 130px;
   padding-bottom: 80px;
