@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 import { motion } from "motion/react";
 import "./Projects.scss";
-import pokemonImage from "../../assets/pokedex.png";
-import portfolio from "../../assets/portfolio.png";
+import pokemonImage from "../../assets/pokedex.PNG";
+import portfolio from "../../assets/portfolio.PNG";
 const projects = [
   {
     id: 1,
