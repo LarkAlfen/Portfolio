@@ -1,7 +1,7 @@
 import { InfoCards } from '../../components/InfoCards'
 import './About.scss'
 import { motion } from "motion/react";
-
+import cv from "../../assets/cv.png";
 const clipIn = {
     hidden: {
         clipPath: "inset(100% 0 0 0)",
@@ -42,7 +42,7 @@ const infos = [
         title: "Outils",
         description:
             "Les outils que j'utilise au quotidien pour développer mes projets.",
-        tags: ["VS Code", "ChatGPT", "GitHub"],
+        tags: ["VS Code", "Claude", "GitHub"],
     },
     {
         title: "Expérience",
@@ -92,7 +92,7 @@ export function About() {
 
         ))}
         <div className='info__link'>
-            <a href="" className='info__cv'>Lien vers mon CV</a>
+            <a href={cv} target='_blank' rel="noopener noreferrer" className='info__cv'>Lien vers mon CV</a>
         </div>
     </section>
 }

@@ -2,21 +2,24 @@ import { useRef, useState } from "react";
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 import { motion } from "motion/react";
 import "./Projects.scss";
-
+import pokemonImage from "../../assets/pokedex.png";
+import portfolio from "../../assets/portfolio.png";
 const projects = [
   {
     id: 1,
-    title: "Message Toast",
+    title: "Portfolio",
     description:
-      "Un système de notifications animées développé avec React et Framer Motion.",
-    image: "https://picsum.photos/id/227/200/300",
+      "Un portfolio personnel démontrant mes capacités en tant que développeur. Réalisé avec React.",
+    image: portfolio,
+    github: "https://github.com/LarkAlfen/Portfolio",
   },
   {
     id: 2,
-    title: "Confirm Dialog",
+    title: "Pokédex",
     description:
-      "Une boîte de dialogue de confirmation réutilisable basée sur les Promises.",
-    image: "https://picsum.photos/id/217/200/300",
+      "Un site permettant de chercher tous les Pokémon, d'afficher leurs infos ainsi qu'un modèle 3D. Réalisé avec React et ThreeJS assisté par IA.",
+    image: pokemonImage,
+    github: "https://github.com/LarkAlfen/Pokedex",
   },
 
 ];

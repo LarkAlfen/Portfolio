@@ -43,7 +43,7 @@
   }
 
   &__visual:hover &__background {
-    filter: blur(0) grayscale(0);
+    filter: blur(0) grayscale(1);
 
     transform: scale(1);
   }

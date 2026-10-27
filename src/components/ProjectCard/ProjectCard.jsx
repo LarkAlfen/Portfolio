@@ -1,8 +1,8 @@
 import "./ProjectCard.scss";
 
-export function ProjectCard({ title, description, image }) {
+export function ProjectCard({ title, description, image, github }) {
   return (
-    <article className="project-card">
+    <a className="project-card" href={github} target="_blank" rel="noopener noreferrer" aria-label={`dépôt GitHub du projet ${title}`}>
       <div
         className="project-card__visual"
         style={{ backgroundImage: `url(${image})` }}
@@ -19,6 +19,6 @@ export function ProjectCard({ title, description, image }) {
           {description}
         </p>
       </div>
-    </article>
+    </a>
   );
 }

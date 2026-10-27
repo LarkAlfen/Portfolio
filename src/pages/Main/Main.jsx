@@ -1,6 +1,6 @@
 import "./Main.scss"
 import { motion } from "motion/react";
-
+import pic from "../../assets/pic.png";
 
 export function Main({ introFinished }) {
   return (
@@ -117,7 +117,7 @@ export function Main({ introFinished }) {
           <article className="hero__profile">
             <div className="hero__profile-photo">
               <img
-                src="https://picsum.photos/id/237/200/300"
+                src={pic}
                 alt="Portrait d'Allan"
               />
             </div>

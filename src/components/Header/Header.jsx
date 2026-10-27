@@ -43,8 +43,7 @@ export function Header({ introFinished }) {
           initial="hidden"
           animate={introFinished ? "visible" : "hidden"}
           href="#" className="header__logo">
-          <span className="header__logo__letter">A</span>
-          <span className="header__logo__letter">T</span>
+          <div className="header__logo__img"/>
         </motion.a>
 
         <motion.nav

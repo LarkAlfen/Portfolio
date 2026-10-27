@@ -8,7 +8,7 @@
 :root {
   // Background
   --color-background: #fff;
-
+  --logo-image: url("../assets/logo-black.png");
   // Text
   --text-primary: black;
   --text-secondary: #343a40;
@@ -34,6 +34,7 @@
 :root.dark {
   // Background
   --color-background: black;
+  --logo-image: url("../assets/logo-white.png");
 
   // Text
   --text-primary: #fff;
