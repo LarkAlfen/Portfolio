@@ -1,7 +1,7 @@
 import { InfoCards } from '../../components/InfoCards'
 import './About.scss'
 import { motion } from "motion/react";
-import cv from "../../assets/cv.png";
+import cv from "../../assets/cv.pdf";
 const clipIn = {
     hidden: {
         clipPath: "inset(100% 0 0 0)",
